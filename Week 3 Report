@@ -1,0 +1,14 @@
+Selected a project in the 1st week of the course.
+
+Completed the following tasks in the 2nd week of the course.
+1. Learn the basics of git.
+2. Set up github project on github.
+3. Learn the basics of chrome extension.
+4. Created manifest file, the basic and most important file for creating an extension.
+5. Designed initial design for the icon to be used for extension.
+
+Planning to do the following tasks in the 3rd week of the course.
+1. Getting a hang of chrome API which deals with history. [https://developer.chrome.com/extensions/history]
+2. Message passing among various pages of the extension project. [https://developer.chrome.com/extensions/messaging]
+3. Implement how to fetch browsing history.
+4. How to host extension on webstore. [https://developer.chrome.com/extensions/hosting]
