@@ -1,7 +1,8 @@
 # ExportBrowserHistoryToExcel
 Open Source Development Class Project: Project to create an extension that exports browser history to MS Excel
 
-Timeline of the project:
+**Timeline of the project:
+
 1st Week:
 Selected a project to work on.
 
@@ -43,3 +44,4 @@ Todo this week:
 8th Week:
 1. Hosting both the extensions.
 2. Testing.
+3. Bug fixes if any.
