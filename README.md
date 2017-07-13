@@ -1,3 +1,4 @@
+Copyright (c) 2017 Nirdeshika Polisetti
 # ExportBrowserHistoryToExcel
 Open Source Development Class Project: Project to create an extension that exports browser history to MS Excel
 
@@ -46,3 +47,5 @@ Todo this week:
 1. Hosting both the extensions.
 2. Testing.
 3. Bug fixes if any.
+
+This work is made available under the MIT license. Please see the file `LICENSE` in this distribution for license terms.
