@@ -1,18 +1,13 @@
-// chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
-// 	if(message.url == "chrome://history/")
-// 		console.log("history");
-// 	else
-// 		chrome.tabs.create({url : "chrome://history/"});
-// });
-
-
-chrome.browserAction.onClicked.addListener(function(tab){
-	if(tab.url == "chrome://history/")
-	{
-		console.log("history");
+chrome.tabs.onActivated.addListener(function(activeInfo){
+	chrome.tabs.get(activeInfo.tabId,function(tab){
+		if(tab.url == "chrome://history/"){
+			chrome.browserAction.setPopup({"tabId" : activeInfo.tabId,"popup" : "popupOnHistory.html"});
 	}
-	else{
-		console.log(tab.url);
-		chrome.tabs.create({url : "chrome://history/"});	
+	});
+});
+
+chrome.tabs.onUpdated.addListener(function(tabId,changeInfo){
+	if(changeInfo.url == "chrome://history/"){
+		chrome.browserAction.setPopup({"tabId" : tabId,"popup" : "popupOnHistory.html"});
 	}
 });
