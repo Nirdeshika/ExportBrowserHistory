@@ -1,6 +1,6 @@
 Copyright (c) 2017 Nirdeshika Polisetti
 # ExportBrowserHistoryToExcel
-Open Source Development Class Project: Project to create an extension that exports browser history to MS Excel
+Open Source Development Class Project: Project to create an extension that exports browser history as .csv file
 
 ***Timeline of the project:***
 
@@ -27,7 +27,7 @@ Todo this week:
 ***Tentative plan for coming weeks:***
 
 4th Week:
-1. Export it to MS Excel and download it.
+1. Export it as .csv file and download it.
 2. Testing.
 
 5th Week:
@@ -40,7 +40,7 @@ Todo this week:
 2. Implement how to fetch history.
 
 7th Week:
-1. Export it to MS Excel and download it.
+1. Export it as .csv file and download it.
 2. Testing.
 
 8th Week:
