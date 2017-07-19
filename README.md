@@ -2,15 +2,16 @@ Copyright (c) 2017 Nirdeshika Polisetti
 # ExportBrowserHistory
 Open Source Development Class Project: Project to create an extension that exports browser history as .csv file
 
-***How the project works:***
+***How the project works:***  
 This project will create an extension which when clicked presents the user with two options: 1) To download the entire history
 2) To download part of the history filitered upon a keyword.
 
-***Details***
+***Details on how to use it:***  
 If the user chooses the complete history option, it downlaods a .csv file containing the browsing history.
 If the user chooses to filter, it presents a new page where he/she can enter a keyword and click "Download" button to download the filtered history.
 After choosing the filtered history option, if the user wants to download the entire history, he can enter nothing in the keyword textbox (i.e an empty string) and click on "Download" button.
-**NOTE:**
+
+**NOTE:**  
 At present, it supports only one keyword. There is a scope for development here to include multiple keywords.
 
 ***Timeline of the project:***
