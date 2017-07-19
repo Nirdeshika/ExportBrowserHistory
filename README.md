@@ -7,7 +7,7 @@ This project will create an extension which when clicked presents the user with 
 2) To download part of the history filitered upon a keyword.
 
 ***Details on how to use it:***  
-Firstly downlaod the project into a folder. Go to chrome://extensions/ and check the "Developer Mode" on. Then the page shows three more options. Choose "Load unpacked extension" and choose the downloaded folder. This loads the extension and you should be able to see the extension next to the address bar.
+Firstly downlaod the project into a folder. Go to chrome://extensions/ and check the "Developer Mode" on. Then the page shows three more options. Choose "Load unpacked extension" and choose the folder with manifest.json file from the downloaded folder. This loads the extension and you should be able to see the extension next to the address bar.
 If the user chooses the complete history option, it downlaods a .csv file containing the browsing history.
 If the user chooses to filter, it presents a new page where he/she can enter a keyword and click "Download" button to download the filtered history.
 After choosing the filtered history option, if the user wants to download the entire history, he can enter nothing in the keyword textbox (i.e an empty string) and click on "Download" button.
