@@ -1,10 +1,10 @@
 var numberOfTimesEducationalSitesWasVisited = 0;
 var numberOfTimesSocialMediaWasVisited = 0;
 var numberOfTimesSearchWasVisited = 0;
-
+var chart;
 function createChart() {
     var ctx = document.getElementById("history_analyze_pie_chart").getContext('2d');
-    var chart = new Chart(ctx, {
+    chart = new Chart(ctx, {
         type: 'pie',
 
         data: {
@@ -20,19 +20,20 @@ function createChart() {
         options: {"onClick": pieSegmentOnClick, "events": ["click", "mousemove"]}
     });
 
+    $(".loader").fadeOut("slow");
+}
 
-    function pieSegmentOnClick(event) {
-        var elementsAtTheEvent = chart.getElementsAtEvent(event);
-        if (elementsAtTheEvent.length > 0) {
-            var labelOfTheSlice = chart.data.labels[elementsAtTheEvent[0]._index];
-            if (labelOfTheSlice == "Educational")
-                downloadEducationalSites();
-            if (labelOfTheSlice == "Searching")
-                downloadSearch();
-            if (labelOfTheSlice == "Social Media") {
-                Promise.all([getSocialMediaHistory("facebook"), getSocialMediaHistory("instagram"), getSocialMediaHistory("twitter")]).
-                    then(function(){downloadSocialMedia()});
-            }
+function pieSegmentOnClick(event) {
+    var elementsAtTheEvent = chart.getElementsAtEvent(event);
+    if (elementsAtTheEvent.length > 0) {
+        var labelOfTheSlice = chart.data.labels[elementsAtTheEvent[0]._index];
+        if (labelOfTheSlice == "Educational")
+            downloadEducationalSites();
+        if (labelOfTheSlice == "Searching")
+            downloadSearch();
+        if (labelOfTheSlice == "Social Media") {
+            Promise.all([getSocialMediaHistory("facebook"), getSocialMediaHistory("instagram"), getSocialMediaHistory("twitter")]).
+            then(function(){downloadSocialMedia()});
         }
     }
 }
