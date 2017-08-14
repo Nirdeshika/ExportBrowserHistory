@@ -1,6 +1,6 @@
 {
 	"manifest_version" : 2,
-	"name" : "Browser to Excel",
+	"name" : "Browser to CSV Exporter",
 	"description" : "Exports browsing history from browser as .csv file.",
 	"version" : "1.0",
 	"author" : "Nirdeshika Polisetti",
