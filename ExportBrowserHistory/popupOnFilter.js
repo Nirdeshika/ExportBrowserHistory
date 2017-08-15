@@ -11,7 +11,7 @@ document.getElementById("Download").addEventListener("click", function () {
     Promise.all(promises).then(function(){chrome.downloads.download({"url": "data:text/csv;charset=utf-8,"+encodeURI(line)})})
 
 });
-var line = "URL, Last Visited On, Number of Times Visited\\r\\n\\n";
+var line = "URL, Last Visited On, Number of Times Visited\r\n\n";
 
 function getSearchHistory(keyword) {
     return new Promise(function (resolve) {
