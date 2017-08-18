@@ -39,7 +39,9 @@ At present, the websites that fall under the categories are hard coded as follow
 - Search: google.com  
 - Social Media: facebook, instagram and pinterest
 
-Also, for better experience please make sure that chrome://settings/ --> Advanced --> Downloads --> Ask where to save each file before downloading is off.
+Also, for better experience please make sure that chrome://settings/ --> Advanced --> Downloads --> Ask where to save each file before downloading is off.  
+
+A demo showing how to install the project and how to use it can be found [here](https://github.com/Nirdeshika/ExportBrowserHistory/blob/master/Demo.mov).
 
 **LICENSE**  
 This work is made available under the MIT license. Please see the file `LICENSE` in this distribution for license terms.
