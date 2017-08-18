@@ -1,0 +1,30 @@
+<!--Copyright (c) 2017 Nirdeshika Polisetti-->
+<!--This work is available under the "MIT license".-->
+<!--Please see the file COPYING in this distribution for license terms.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/ExternalAPI/jquery-3.2.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>History Analysis</title>
+    <script src = "/ExternalAPI/Chart.js" ></script>
+    <script src="/Scripts/popUpOnAnalyze.js" defer></script>
+</head>
+<body  style="min-height: 300px; min-width: 300px">
+<div class = "loader">
+</div>
+<style>
+    .loader {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url('/Images/page-loader.gif') 50% 50% no-repeat rgb(249,249,249);
+    }
+</style>
+<canvas id="history_analyze_pie_chart"></canvas>
+</body>
+</html>

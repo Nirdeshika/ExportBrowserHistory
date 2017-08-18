@@ -5,10 +5,9 @@
 	"version" : "1.0",
 	"author" : "Nirdeshika Polisetti",
 
-	"browser_action" : {"default_icon" : "icon.png",
+	"browser_action" : {"default_icon" : "/Images/icon.png",
 						"default_title" : "Browser to CSV exporter",
-						"default_popup" : "popup.html"
+						"default_popup" : "/Popup_UI/popup.html"
 						},
-	"background" : {"scripts" : ["background.js"]},
 	"permissions" : ["tabs","history","downloads"]
 }
