@@ -11,13 +11,18 @@
 	<title>PopUp on Filter</title>
 </head>
 <body>
-<div id = "Filter" style="display: flex;align-items: flex-start; font-weight: bold;">
-	Keyword:<textarea type="text" id="keyword" style="flex: 1; min-height: 40px; overflow-y: scroll; resize: none" placeholder="Leave the box empty to download the entire history. Separate with | to use multiple keywords."></textarea>
+<div id = "HomeButton" style="text-align: center">
+	<img id="home" src="/Images/home_button.png" style="float:left">
+	<label style="font-size: 25px; color: #bd5734">Filtered History</label>
+</div>
+<br>
+<div id = "Filter" style="display: flex;align-items: flex-start; font-weight: bold;color:#7a3b2e">
+	Keyword:<textarea type="text" id="keyword" style="flex: 1; min-height: 40px; overflow-y: scroll; resize: none;" placeholder="Leave the box empty to download the entire history. Separate with | to use multiple keywords."></textarea>
 </div>
 <br>
 <div style="text-align: center;">
-	<button id = "Download">Download</button>
-</div>	
+	<button id = "Download" style="font-weight: bolder; background-color: #a79e84" >Download</button>
+</div>
 <script src = "/Scripts/popupOnFilter.js"></script>
 </body>
 </html>

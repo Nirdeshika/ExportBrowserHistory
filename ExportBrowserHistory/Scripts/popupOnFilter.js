@@ -33,3 +33,8 @@ function getSearchHistory(keyword) {
         });
     });
 }
+
+// When clicked on the home button, it takes you to the popup.html where all the options are displayed.
+document.getElementById("home").addEventListener("click",function () {
+    window.open("/Popup_UI/popup.html","_self");
+})

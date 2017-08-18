@@ -2,6 +2,10 @@
 // This work is available under the "MIT license".
 // Please see the file COPYING in this distribution for license terms.
 
+// When clicked on the home button, it takes you to the popup.html where all the options are displayed.
+document.getElementById("home").addEventListener("click",function () {
+    window.open("/Popup_UI/popup.html","_self");
+})
 
 var numberOfTimesEducationalSitesWasVisited = 0;
 var numberOfTimesSocialMediaWasVisited = 0;
