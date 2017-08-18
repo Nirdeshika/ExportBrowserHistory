@@ -7,6 +7,16 @@ var numberOfTimesEducationalSitesWasVisited = 0;
 var numberOfTimesSocialMediaWasVisited = 0;
 var numberOfTimesSearchWasVisited = 0;
 var chart;
+
+// This will get the number of educational, social media and searching sites that are visited. When these values are calculated,
+// a pie-chart for each of the aforementioned categories is created.
+Promise.all([getnumberOfTimesEducationalSitesWasVisitedPromise(), getNumberOfTimesSocialMediaWasVisitedPromise('facebook'),
+    getNumberOfTimesSocialMediaWasVisitedPromise('instagram'), getNumberOfTimesSocialMediaWasVisitedPromise('twitter'),
+    getNumberOfTimesSearchWasVisitedPromise()]).then(function () {
+    createChart()
+});
+
+// This is the function used to create a pie-chart.
 function createChart() {
     var ctx = document.getElementById("history_analyze_pie_chart").getContext('2d');
     chart = new Chart(ctx, {
@@ -28,6 +38,7 @@ function createChart() {
     $(".loader").fadeOut("slow");
 }
 
+// This is called whenever a segment/slice of the pie chart is clicked. Based on the segment that was clicked, the corresponding data is downloaded.
 function pieSegmentOnClick(event) {
     var elementsAtTheEvent = chart.getElementsAtEvent(event);
     if (elementsAtTheEvent.length > 0) {
@@ -43,6 +54,7 @@ function pieSegmentOnClick(event) {
     }
 }
 
+// Returns a promise that calculates the number of times educational sites(stackoverflow) were visited.
 function getnumberOfTimesEducationalSitesWasVisitedPromise() {
     return new Promise(function (resolve) {
         chrome.history.search({"text": "stackoverflow", "maxResults": 0, "startTime": 0}, function (results) {
@@ -55,7 +67,8 @@ function getnumberOfTimesEducationalSitesWasVisitedPromise() {
     });
 }
 
-function getNumberOfTimesSocialMediaWasVisited(keyword) {
+// Returns a promise that calculates the number of times social media sites with the given keyword were visited.
+function getNumberOfTimesSocialMediaWasVisitedPromise(keyword) {
     return new Promise(function (resolve) {
         chrome.history.search({"text": keyword, "maxResults": 0, "startTime": 0}, function (results) {
             for (var i = 0; i < results.length; i++) {
@@ -67,7 +80,8 @@ function getNumberOfTimesSocialMediaWasVisited(keyword) {
     });
 }
 
-function getNumberOfTimesSearchWasVisited() {
+// Returns a promise that calculates the number of times search sites(google.com) were visited.
+function getNumberOfTimesSearchWasVisitedPromise() {
     return new Promise(function (resolve) {
         chrome.history.search({"text": "google.com/", "maxResults": 0, "startTime": 0}, function (results) {
             for (var i = 0; i < results.length; i++) {
@@ -79,12 +93,7 @@ function getNumberOfTimesSearchWasVisited() {
     });
 }
 
-Promise.all([getnumberOfTimesEducationalSitesWasVisitedPromise(), getNumberOfTimesSocialMediaWasVisited('facebook'),
-    getNumberOfTimesSocialMediaWasVisited('instagram'), getNumberOfTimesSocialMediaWasVisited('twitter'),
-    getNumberOfTimesSearchWasVisited()]).then(function () {
-    createChart()
-});
-
+// When the user clicks on the educational sites segment of the slice, this function is called and it downloads that data.
 function downloadEducationalSites() {
     chrome.history.search({"text": "stackoverflow", "maxResults": 0, "startTime": 0}, function (results) {
         for (var i = 0; i < results.length; i++) {
@@ -98,10 +107,12 @@ function downloadEducationalSites() {
     });
 }
 
+// When the user clicks on the social media segment of the slice, this function is called and it downloads that data.
 function downloadSocialMedia() {
     chrome.downloads.download({"url": "data:text/csv;charset=utf-8," + encodeURI(socialMediaLine)});
 }
 
+// When the user clicks on the search sites segment of the slice, this function is called and it downloads that data.
 function downloadSearch() {
     chrome.history.search({"text": "google.com/", "maxResults": 0, "startTime": 0}, function (results) {
         for (var i = 0; i < results.length; i++) {
@@ -117,6 +128,7 @@ function downloadSearch() {
 
 var socialMediaLine = "URL, Last Visited On, Number of Times Visited\r\n\n";
 
+// Called to collect the social media data based on the keyword.
 function getSocialMediaHistory(keyword) {
     return new Promise(function(resolve){
         chrome.history.search({"text": keyword, "maxResults": 0, "startTime": 0}, function (results) {

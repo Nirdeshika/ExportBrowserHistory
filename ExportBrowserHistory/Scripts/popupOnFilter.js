@@ -2,6 +2,9 @@
 // This work is available under the "MIT license".
 // Please see the file COPYING in this distribution for license terms.
 
+// This listens for the click on Download button of popupOnFilter.html. When it is clicked, it first splits the keywords delimited by "|".
+// For each keyword, it makes a search in the browser history and fetches the data. After, data for all the keywords is collected, the csv
+// containing this data is downloaded.
 document.getElementById("Download").addEventListener("click", function () {
     var keywordString = document.getElementById("keyword").value;
     var keywords = keywordString.split("|");
@@ -17,6 +20,7 @@ document.getElementById("Download").addEventListener("click", function () {
 });
 var line = "URL, Last Visited On, Number of Times Visited\r\n\n";
 
+// This function is used to fetch the browser history data(URL, lastVisitedDataTime and numberOfVisits) for the given keyword.
 function getSearchHistory(keyword) {
     return new Promise(function (resolve) {
         console.log(keyword);
