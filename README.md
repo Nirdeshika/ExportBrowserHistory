@@ -1,64 +1,45 @@
-Copyright (c) 2017 Nirdeshika Polisetti
 # ExportBrowserHistory
-Open Source Development Class Project: Project to create an extension that exports browser history as .csv file
+Copyright (c) 2017 Nirdeshika Polisetti
 
-***How the project works:***  
-This project will create an extension which when clicked presents the user with two options: 1) To download the entire history
-2) To download part of the history filitered upon a keyword.
+### Contact Information:
 
-***Details on how to use it:***  
-Firstly downlaod the project into a folder. Go to chrome://extensions/ and check the "Developer Mode" on. Then the page shows three more options. Choose "Load unpacked extension" and choose the folder with manifest.json file from the downloaded folder. This loads the extension and you should be able to see the extension next to the address bar.
-If the user chooses the complete history option, it downlaods a .csv file containing the browsing history.
-If the user chooses to filter, it presents a new page where he/she can enter a keyword and click "Download" button to download the filtered history.
-After choosing the filtered history option, if the user wants to download the entire history, he can enter nothing in the keyword textbox (i.e an empty string) and click on "Download" button.
+Name of the developer: Nirdeshika Polisetti  
+Project Name: ExportBrowserHistory  
+Email Id: np4@pdx.edu  
+Personal Email: nirdeshika2533@gmail.com  
+Bugs: https://github.com/Nirdeshika/ExportBrowserHistory/issues  
 
-**NOTE:**  
-At present, it supports only one keyword. There is a scope for development here to include multiple keywords.
+ExportBrowserHistory is a [chrome extension](https://developer.chrome.com/extensions) to export the browser history to .csv file that can be downloaded.  
 
-***Timeline of the project:***
+***What is this project for?:***
+Many times I forget to bookmark the websites I visit. It is difficult to search the chrome history for a particular keyword, as it get reloaded everytime I scroll down due to the huge amounts of history items. As I am comfortable using Excel, I wanted to view this data in a .csv format. Though there are few extensions already available, they either provided the data in JSON format or they aren't free. So, I wanted to create one for myself. Hence this project.  
 
-1st Week:
-Selected a project to work on.
+***Features available***
+This extension offers three main features:  
+1. Complete History: Downloads the entire history.  
+2. Filtered History: Filters the history on multiple keywords delimited by "|" and then downloads it.  
+3. Analyze History: Displays a pie-chart with three categories: (i) Educational (ii) Search and (iii) Social Media. It shows the number of times a category of websites is visited and also downloads it.
 
-2nd Week:
-1. Learn the basics of git.
-2. Set up github project on github.
-3. Learn the basics of chrome extension.
-4. Created manifest file, the basic and most important file for creating an extension.
-5. Designed initial design for the icon to be used for extension.
+***How to install:*** 
+0. Since it is a chrome extension, you obviously need Google Chrome to use this extension.   
+1. Downlaod/Clone the project into a folder.  
+2. Go to chrome://extensions/ and check the "Developer Mode" on.  
+3. Then the page shows three more options. Choose "Load unpacked extension" and choose the folder with manifest.json file(ExportBrowserHistory) from the downloaded folder.  
+4. This loads the extension and you should be able to see the extension next to the search bar.  
 
-3rd Week:
-1. Getting a hang of chrome API which deals with history. [https://developer.chrome.com/extensions/history]
-2. Message passing among various pages of the extension project. [https://developer.chrome.com/extensions/messaging]
-3. How to host extension on webstore. [https://developer.chrome.com/extensions/hosting]
-4. Understanding event pages [https://developer.chrome.com/extensions/event_pages]
-5. Implemented creating a confirm box to take user input on whether to download the complete history or filtered history.
+***How to use:***  
+The extension when clicked presents with the user with three buttons: Complete History, Filtered History and Analyze History.  
+- If the user clicks on Complete History, it downloads the entire history.  
+- If the user clicks on Filtered History, it shows a text box where he/she can enter single/multiple keywords separated by "|". If he/she wishes to download the entire history, it can be left empty. Click on the Download button to download the filtered history.  
+- If the user clicks on Analyze History, a pie-chart with three categories: (i) Educational (ii) Search and (iii) Social Media. When you hover over the segment of the pie-chart, it shows the number of times the websites under that category is visited. When you click on it, it downloads the history of that category.  
 
-Todo this week:
-6. Implement how to fetch browser history.
+**Limitations:**  
+At present, the websites that fall under the categories are hard coded as follows.  
+- Educational: stackoverflow  
+- Search: google.com  
+- Social Media: facebook, instagram and pinterest
 
-***Tentative plan for coming weeks:***
+Also, for better experience please make sure that chrome://settings/ --> Advanced --> Downloads --> Ask where to save each file before downloading is off.
 
-4th Week:
-1. Export it as .csv file and download it.
-2. Testing.
-
-5th Week:
-1. Starting Firefox extension.
-2. Learn the basics of firefox extension.
-3. Create a basic implementation of the project.
-
-6th Week:
-1. Learn how to fetch browsing history.
-2. Implement how to fetch history.
-
-7th Week:
-1. Export it as .csv file and download it.
-2. Testing.
-
-8th Week:
-1. Hosting both the extensions.
-2. Testing.
-3. Bug fixes if any.
-
+**LICENSE**
 This work is made available under the MIT license. Please see the file `LICENSE` in this distribution for license terms.
